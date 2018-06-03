@@ -1,0 +1,12 @@
+node_modules/
+package-lock.json
+yarn.lock
+yarn-error.log
+.vscode
+
+# Files that are transpiled but not needed in output
+*.js.map
+*.spec.js
+
+# Everything is compiled into the generators/ folder. That's ok, but we don't need the folder inside git
+generators/

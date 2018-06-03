@@ -1,0 +1,5 @@
+# Ignore usual node setup
+node_modules/
+
+# Build files
+build/

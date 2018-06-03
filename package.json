@@ -1,0 +1,61 @@
+{
+  "name": "generator-productive-typescript",
+  "version": "0.1.0",
+  "description": "A generator for different typescript projects.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "onchange src/**/* -i -w -v -- yarn recompile",
+    "recompile": "tsc && cpx src/templates/**/* generators/app/templates && cpx src/templates/.gitignore generators/app/templates && jest",
+    "test": "jest"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "Typescript",
+    "Yeoman",
+    "generator",
+    "linting",
+    "unit test"
+  ],
+  "author": "Frédéric HEMERY<fhemery@hemit.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/node": "^10.3.0",
+    "@types/yeoman-generator": "^2.0.3",
+    "cpx": "^1.5.0",
+    "jest": "^23.1.0",
+    "mocha": "^5.2.0",
+    "onchange": "^4.0.0",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.1",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^1.7.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/src/templates/",
+      "/generators/"
+    ]
+  },
+  "watch": {
+    "recompile": "src/**/*"
+  }
+}
